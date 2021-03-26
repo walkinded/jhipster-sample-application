@@ -1,0 +1,10 @@
+{
+  "testAppJHipsterApp": {
+    "Roles": {
+      "null": "",
+      "ADMIN": "ADMIN",
+      "MANAGER": "MANAGER",
+      "USER": "USER"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="project">
+            <h2><span jhiTranslate="testAppJHipsterApp.project.detail.title">Project</span> {{ project.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testAppJHipsterApp.project.title">Title</span></dt>
+                <dd>
+                    <span>{{ project.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="testAppJHipsterApp.project.description">Description</span></dt>
+                <dd>
+                    <span>{{ project.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="testAppJHipsterApp.project.tasks">Tasks</span></dt>
+                <dd>
+                    <span>{{ project.tasks }}</span>
+                </dd>
+                <dt><span jhiTranslate="testAppJHipsterApp.project.users">Users</span></dt>
+                <dd>
+                    <span>{{ project.users }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/project', project.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
