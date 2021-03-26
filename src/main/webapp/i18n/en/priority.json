@@ -1,0 +1,10 @@
+{
+  "testAppJHipsterApp": {
+    "Priority": {
+      "null": "",
+      "LOW": "LOW",
+      "MEDIUM": "MEDIUM",
+      "HARD": "HARD"
+    }
+  }
+}

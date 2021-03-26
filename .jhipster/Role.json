@@ -1,0 +1,22 @@
+{
+  "name": "Role",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "Roles",
+      "fieldValues": "ADMIN,MANAGER,USER"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326161505",
+  "entityTableName": "role",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
