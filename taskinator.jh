@@ -1,0 +1,125 @@
+
+
+entity User {
+	id Long,
+	firstName String,
+	lastName String,
+    username String,
+	email String
+}
+
+entity Project {
+	id Long,
+	title String,
+	description String,
+    tasks Long,
+    users Long
+}
+
+entity Task {
+	id Long,
+	title String,
+	description String,
+    startDate Instant,
+	endDate Instant
+    priority Priority
+}
+
+entity Role {
+	id Long,
+	name Roles
+}
+entity UserRoles {
+	id Long,
+	idUser Long
+    idRole Long
+}
+enum Roles {
+    ADMIN, MANAGER, USER
+}
+enum Priority {
+    LOW, MEDIUM, HARD
+}
+/**
+*relationship ManyToMany {
+*    User{projects} to Project
+*    User{tasks} to Task
+*}
+//ManyToOne
+*relationship ManyToMany {
+*	Project{tasks} to Task{id}
+*    Project{users} to User{id}
+*}
+*relationship ManyToMany {
+*	Task{users} to User{id}
+*}
+*/
+relationship ManyToMany {
+	Role{id} to UserRoles{idRole}
+    User{id} to UserRoles{idUser}
+}
+
+
+
+//entity JobHistory {
+//	startDate Instant,
+//	endDate Instant,
+//	language Language
+//}
+
+//enum Language {
+//    FRENCH, ENGLISH, SPANISH
+//}
+
+//relationship OneToOne {
+//	Country{region} to Region
+//}
+
+//relationship OneToOne {
+//	Location{country} to Country
+//}
+
+//relationship OneToOne {
+//	Department{location} to Location
+//}
+
+//relationship ManyToMany {
+//	Job{task(title)} to Task{job}
+//}
+
+// defining multiple OneToMany relationships with comments
+//relationship OneToMany {
+//	Employee to Job{employee},
+	/**
+	* A relationship
+	*/
+//	Department to
+	/**
+	* Another side of the same relationship
+	*/
+//	Employee{department}
+//}
+
+//relationship ManyToOne {
+//	Employee{manager} to Employee
+//}
+
+// defining multiple oneToOne relationships
+//relationship OneToOne {
+//	JobHistory{job} to Job,
+//	JobHistory{department} to Department,
+//	JobHistory{employee} to Employee
+//}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+//paginate User, Role, Project, Task with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
